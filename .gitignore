@@ -100,3 +100,5 @@ dmypy.json
 # Windows
 Thumbs.db
 ehthumbs.db
+
+report.html

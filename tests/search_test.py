@@ -4,6 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from fixtures.driver_fixture import driver
+from selenium.webdriver.support.wait import TimeoutException
 
 
 def test_open_bugintenders(driver):
