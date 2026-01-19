@@ -7,10 +7,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from fixtures.driver_fixture import driver
 from selenium.webdriver.support.wait import TimeoutException
 
-# Add logging configuration
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Add logging to test_open_bugintenders
 def test_open_bugintenders(driver):
     logging.info("Opening Bugintenders website.")
     driver.get("https://bugintenders.lukoyanov.love")
@@ -19,7 +17,6 @@ def test_open_bugintenders(driver):
     logging.info("Checking if the page title contains 'Bügın’ Tenders'.")
     assert "Bügın’ Tenders" in driver.title
 
-# Add logging to test_search_product
 def test_search_product(driver):
     logging.info("Opening Bugintenders website.")
     driver.get("https://bugintenders.lukoyanov.love")
