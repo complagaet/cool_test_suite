@@ -55,7 +55,7 @@ def test_login_logout(driver):
 
     assert "Login" in login_header.text
 
-def test_hover_over_menu(driver):
+def test_always_fail(driver):
     driver.get("https://sultan-it-solutions-admin.vercel.app")
     wait = WebDriverWait(driver, 10)
 
@@ -82,7 +82,7 @@ def test_hover_over_menu(driver):
     )
 
     actions = ActionChains(driver)
-    actions.move_to_element_with_offset(menu_button, 5, 5).click().perform()
+    actions.move_to_element(menu_button).perform()
     menu_button.click()       
 
     sidebar = wait.until(
@@ -91,4 +91,5 @@ def test_hover_over_menu(driver):
         )
     )
 
-    assert sidebar.is_displayed()
+    #assert sidebar.is_displayed()
+    assert False
