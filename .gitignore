@@ -104,3 +104,8 @@ ehthumbs.db
 report.html
 screenshots/
 pytest.log
+.env
+
+test_data*
+output_data*
+ddt_results*

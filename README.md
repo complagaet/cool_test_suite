@@ -52,3 +52,44 @@ This project contains a suite of automated tests for a software quality assuranc
 - You can add more test cases in the `tests/` directory and define additional fixtures in the `fixtures/` directory as needed.
 
 Happy Testing!
+
+## Assignment 6: Data-Driven + Cross-Browser Testing
+
+### Selected Website (Primary)
+
+- `https://sultan-it-solutions-admin.vercel.app`
+
+### Data-Driven Testing (Excel)
+
+- Excel file: `data/test_data.xlsx`
+- Test: `tests/test_ddt_login_excel.py`
+- The test reads multiple rows from Excel, runs the same login flow, and asserts expected results per row.
+
+Run only the DDT test:
+
+```bash
+pytest -v -k ddt_login_excel
+```
+
+### Cross-Browser Cloud Testing (BrowserStack)
+
+Set credentials:
+
+```bash
+export BROWSERSTACK_USERNAME="your_username"
+export BROWSERSTACK_ACCESS_KEY="your_access_key"
+```
+
+Run on BrowserStack (choose browser):
+
+```bash
+RUN_ON=cloud BROWSER=chrome pytest -v -k ddt_login_excel
+RUN_ON=cloud BROWSER=firefox pytest -v -k ddt_login_excel
+```
+
+### Submission Checklist
+
+- Source code (tests + fixtures).
+- Excel file (`data/test_data.xlsx`) with input data and expected results.
+- Screenshots, video recording, and logs from BrowserStack dashboard.
+- Report (README/PDF/DOC) with positive and negative test cases.

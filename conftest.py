@@ -1,5 +1,7 @@
-import pytest
 import os
+
+import pytest
+from dotenv import load_dotenv
 from pytest_html import extras
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
@@ -20,6 +22,7 @@ def pytest_runtest_makereport(item, call):
                 report.extra.append(extras.image(screenshot_path))
 
 def pytest_configure(config):
+    load_dotenv()
     if config.pluginmanager.hasplugin("html"):
         config._metadata = getattr(config, "_metadata", {})
         config._metadata["Project Name"] = "Cool Test Suite"
